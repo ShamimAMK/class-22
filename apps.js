@@ -6,44 +6,48 @@ const numbers = [12, 45, 23, 56, 48, 45, 54];
 // const muNum =numbers.at(-3);
 //console.log(myNum);
 
-const [num1, num2, num3, num4, num5, num6, num7] = numbers;
-console.log(num1, num2, num3, num4, num5, num6, num7);
-//consol.log(a,b,c,d,e,f,g);
+// const [num1, num2, num3, num4, num5, num6, num7] = numbers;
+// console.log(num1, num2, num3, num4, num5, num6, num7);
+// //consol.log(a,b,c,d,e,f,g);
 
-const friends = ["rahat", "fahim", "mira", "nirob"];
-const [frnd1, frnd2, , frnd4] = friends;
-console.log(friends);
-console.log(frnd1, frnd2, frnd4);
-console.log(frnd2);
+// const friends = ["rahat", "fahim", "mira", "nirob"];
+// const [frnd1, frnd2, , frnd4] = friends;
+// console.log(friends);
+// console.log(frnd1, frnd2, frnd4);
+// console.log(frnd2);
 
-let a = 1;
-let b = 2;
-let c;
-console.log(a, b);
+// let a = 1;
+// let b = 2;
+// let c;
+// console.log(a, b);
 
 // c = a; //1
 // a = b; //2
 // b = c; //1
 
-[a, b] = [b, a];
-console.log(a, b);
+// [a, b] = [b, a];
+// console.log(a, b);
 
-//nested array destruction
-const myArr = [1, 2, 3, [4, 5]];
-const [, x, , [, y]] = myArr;
-console.log(x, y);
+// //nested array destruction
+// const myArr = [1, 2, 3, [4, 5]];
+// const [, x, , [, y]] = myArr;
+// console.log(x, y);
 
-const tools = ["js", "ts", ["react", ["next", "gatsby", ["remix"]]]];
-const [js, , [react, [next, , [remix]]]] = tools;
-console.log(js, react, next, remix);
+// const tools = ["js", "ts", ["react", ["next", "gatsby", ["remix"]]]];
+// const [js, , [react, [next, , [remix]]]] = tools;
+// console.log(js, react, next, remix);
 
 //object destructing
-const animal = {
-  petname: "Cat",
-  age: 2,
-  foods: ["milk", "milk"],
-  variant: "white",
-};
+// const animal = {
+//   petname: "Cat",
+//   age: 2,
+//   foods: ["milk", "fish"],
+//   variant: "white",
+//   enemies: {
+//     enm1: "Dog",
+//     enm2: "Mouse",
+//   },
+// };
 // const {
 //   animalName,
 //   age,
@@ -56,8 +60,72 @@ const animal = {
 //   foods: [food1, food2],
 // } = animal;
 
-// console.log(animalName, age, food1, food2);
-// console.log(animalName, age, food1, food2);
+// // console.log(animalName, age, food1, food2);
 
-const { age: petAge, petname: animalName, variant = "black" } = animal;
-console.log(petAge, animalName, variant);
+// const {
+//   age: petAge,
+//   petname: animalName,
+//   variant = "black",
+//   foods: [food1, food2],
+//   enemies: { enm1, enm2 },
+// } = animal;
+// console.log(petAge, animalName, variant);
+// console.log(animalName, food1, food2, variant);
+
+//spead operator
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// const arr3 = [...arr1, ...arr2];
+// console.log(arr3);
+
+// const object1 = {
+//   nameP: "Mim",
+//   age: 20,
+// };
+// const object2 = object1;
+// console.log(object2);
+// const object2 = { ...object1 };
+// object2.nameP = "Rita";
+// console.log(object2);
+
+//rest patter
+// const evenNumber = [10, 20, 30, 40];
+// const [even1, even2, ...others] = evenNumber; // rest element must at last
+// console.log(even1, even2, others);
+
+const evenNumber = [10, 20, 30, 12, 24, 36, 40];
+const [even1, even2, , , ...others] = evenNumber; // rest element must at last
+// console.log(even1, even2, others);
+
+const student = {
+  stName: "Sarah",
+  age: 20,
+  roll: 100,
+};
+const { age, ...rest } = student;
+// console.log(rest);
+// rest parameter is call param, array = arr, object = obj, string = str, boolean = bln,
+// rest param
+//...agr --> spread --> unpack
+//...param --> rest --> pack
+// function sum(a, b) {
+//   return a + b;
+// }
+// const arrTest = [5, 7];
+// console.log(sum(...arrTest));
+// console.log(sum(...arrTest, 8, 9, 5));
+
+// function sum(a, b, ...args) {
+//   console.log(args);
+//   return a + b;
+// }
+// const arrTest = [5, 7];
+// console.log(sum(...arrTest));
+// console.log(sum(...arrTest, 8, 9, 5, 12, 45));
+
+function sum(args) {
+  console.log(args);
+  // return a + b;
+}
+const arrTest = [5, 7];
+console.log(sum(...arrTest, 8, 9, 5, 12, 45));
