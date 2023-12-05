@@ -123,9 +123,44 @@ const { age, ...rest } = student;
 // console.log(sum(...arrTest));
 // console.log(sum(...arrTest, 8, 9, 5, 12, 45));
 
-function sum(args) {
-  console.log(args);
-  // return a + b;
-}
-const arrTest = [5, 7];
-console.log(sum(...arrTest, 8, 9, 5, 12, 45));
+// function sum(...args) {
+//   console.log(args);
+//   // return a + b;
+// }
+// const arrTest = [5, 7];
+// console.log(sum(...arrTest, 8, 9, 5, 12, 45));
+
+// const doMath = (x, y, ...args) => {
+//   const result = x - y;
+//   let sum = 0;
+
+//   for (let i = 0; i < args.length; i++) {
+//     sum += args[i];
+//   }
+
+//   return {
+//     subtract: result,
+//     sum: sum,
+//   };
+// };
+
+// console.log(doMath(10, 5, 5, 4, 7, 8, 5));
+const doMath2 = (a, b, ...args) => {
+  //calc sum
+  const sum = a + b;
+  //calc subtract
+  const subtract = a - b;
+  //calc product
+  let product = 1;
+
+  for (let i = 1; i < args.length; i++) {
+    product *= args[i];
+  }
+  return {
+    sum,
+    subtract,
+    product,
+  };
+};
+
+console.log(doMath2(10, 15, 2, 45, 8, 7));
