@@ -164,3 +164,66 @@ const doMath2 = (a, b, ...args) => {
 };
 
 console.log(doMath2(10, 15, 2, 45, 8, 7));
+
+
+// Short circuiting
+const isWinter = true
+
+// const product = isWinter?'Buy hoodie':'Buy t-shirt'
+const product = isWinter &&'Buy hoodie'
+
+// console.log(product);
+// const number = 10;
+ 
+// number > 10 && console.log("10");
+// console.log(number || "0"); 
+// const number =1;
+// const newNumber = number || 10;
+
+// const number =100;
+// const newNumber = number || 100;
+// console.log(newNumber);
+
+// const number =0;
+// const newNumber = number || 100;
+// console.log(newNumber);
+
+// const number =0;
+// const newNumber = number ?? 100;  // ?? nullish coalsing operator (NCO)
+
+// console.log(newNumber);
+
+
+
+// for of loop
+const oddNumbers = [11,13,15,17,19]
+
+// for(let i=0; i<oddNumbers.length; i++){
+//   consolel.log(oddNumbers[i])
+// };
+
+for(const num of oddNumbers){
+  console.log(num);
+}
+  
+const friends = ["Tahia", "Kaushik", "Shamim"]
+  for(const frnd of friends){
+    console.log(frnd);
+  }
+
+
+// optional chaining
+const subject = {
+  total : 5,
+  best: 'physics',
+  wellPerform:{
+    markWise: 'Chemistry',
+    skillsWise: 'Math',
+    creativity: {
+      indoor:'Karate',
+      outdoor:'Swimming',
+  },
+},
+};
+
+console.log(subject.wellPerform?.creativity?.outdoor?.marks?.grade); // ? optional chain
